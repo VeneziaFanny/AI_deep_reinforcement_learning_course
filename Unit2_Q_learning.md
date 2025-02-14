@@ -10,9 +10,13 @@ And to find this optimal policy (hence solving the RL problem), there are two ma
 Policy-based methods: Train the policy directly to learn which action to take given a state.
 Value-based methods: Train a value function to learn which state is more valuable and use this value function to take the action that leads to it.
 
+![Optimal policy](images/optimal_policy.png)
+
 #### 2. Two types of value-based methods
 
 In value-based methods, we learn a value function that maps a state to the expected value of being at that state.
+
+![value_based_method.png](images/value_based_method.png)
 
 The goal of an RL agent is to have an optimal policy π*.
 
@@ -36,9 +40,13 @@ For the state-value function, we calculate the value of a stateSt.​
  
 For the action-value function, we calculate the value of the state-action pair (St,At) hence the value of taking that action at that state.
 
+![value_based_methods.png](images/value_based_methods.png)
+![value_based_methods.png](images/two_types_v_b_methods.png)
+
 #### 3. The Bellman Equation: simplify our value estimation
 
 L’équation de Bellman  simplifie notre calcul de la valeur d’état ou de la valeur d’action d’état.
+![Bellman Equation](images/calculate_v.png)
 
 ![Bellman Equation](images/Bellman_Equation.png)
 
@@ -82,6 +90,14 @@ Gt by adding R t+1  and the discounted value of the next state.
 
 ![TD Approach](images/TD_Learning_Approach.png)
 
+Both approaches :
+
+![Both Approach](images/both_approach.png)
+
+Recap :
+
+![Recap both Approach](images/recap_both_approach.png)
+
 #### 5. Mid-way Recap
 
 We have two types of value-based functions:
@@ -116,16 +132,28 @@ So: the Q-function uses a Q-table that has the value of each state-action pair. 
 
 In the beginning, our Q-table is useless since it gives arbitrary values for each state-action pair (most of the time, we initialize the Q-table to 0). As the agent explores the environment and we update the Q-table, it will give us a better and better approximation to the optimal policy.
 
+![Link](images/link_between_value_and_policy.png)
+
 * The Q-Learning algorithm
+
+![Pseudo code](images/pseudo_code.png)
+
 Step 1: We initialize the Q-table
 
+![Step 1](images/step_1.png)
+
 Step 2: Choose an action using the epsilon-greedy strategy
+
+![Step 2](images/epsilon_greedy_strategy.png)
+
 The epsilon-greedy strategy is a policy that handles the exploration/exploitation trade-off.
 At the beginning of the training, the probability of doing exploration will be huge since ɛ is very high, so most of the time, we’ll explore. But as the training goes on, and consequently our Q-table gets better and better in its estimations, we progressively reduce the epsilon value since we will need less and less exploration and more exploitation.
 
 Step 3: Perform action At, get reward Rt+1 and next state St+1
 
 Step 4: Update Q(St, At)
+
+![Q(St,At ) update formula](images/Q(St,At)_update_formula.png)
 
 * Off-policy vs On-policy
 The difference is subtle:

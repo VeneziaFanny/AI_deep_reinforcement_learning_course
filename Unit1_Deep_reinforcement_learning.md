@@ -8,11 +8,15 @@ Reinforcement learning is a framework for solving control tasks (also called dec
 
 * The RL Process
 
+![RL process](images/rl_process.png)
+
 This RL loop outputs a sequence of state, action, reward and next state.
 The agent’s goal is to maximize its cumulative reward, called the expected return.
 
 In papers, you’ll see that the RL process is called a Markov Decision Process (MDP).
 The Markov Property implies that our agent needs only the current state to decide what action to take and not the history of all the states and actions they took before.
+
+![RL loop](images/rl.png)
 
 * Observations/States Space
 
@@ -30,6 +34,10 @@ Continuous space: the number of possible actions is infinite.
 * Rewards and the discounting
 
 The reward is fundamental in RL because it’s the only feedback for the agent. Thanks to it, our agent knows if the action taken was good or not.
+
+![Reward](images/reward.png)
+
+![Reward](images/discounted_reward.png)
 
 ##### 3. Type of tasks
 
