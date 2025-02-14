@@ -1,6 +1,6 @@
 ### UNIT 2 : Introduction to Q-Learning
 
-#### 1. What is RL? A short recap
+#### 1. What is RL ? A short recap
 
 Politic = brain of our agent
 Our goal is to find an optimal policy π* , aka., a policy that leads to the best expected cumulative reward.
@@ -40,6 +40,8 @@ For the action-value function, we calculate the value of the state-action pair (
 
 L’équation de Bellman  simplifie notre calcul de la valeur d’état ou de la valeur d’action d’état.
 
+![Bellman Equation](images/Bellman_Equation.png)
+
 The Bellman equation is a recursive equation that works like this: instead of starting for each state from the beginning and calculating the return, we can consider the value of any state as:
 
 The immediate reward Rt+1 + the discounted value of the state that follows (γ∗V(St+1)).
@@ -54,7 +56,9 @@ To recap, the idea of the Bellman equation is that instead of calculating each v
 
 #### 4. Monte Carlo vs Temporal Difference Learning
 
-* Monte Carlo: learning at the end of the episode
+* Monte Carlo : learning at the end of the episode
+
+![Monte Carlo](images/Monte_Carlo_Approach.png)
 
 Monte Carlo waits until the end of the episode, calculates Gt  (return) and uses it as a target for updating V(St).
 
@@ -76,6 +80,8 @@ But because we didn’t experience an entire episode, we don’t have
 Gt  (expected return). Instead, we estimate
 Gt by adding R t+1  and the discounted value of the next state.
 
+![TD Approach](images/TD_Learning_Approach.png)
+
 #### 5. Mid-way Recap
 
 We have two types of value-based functions:
@@ -95,6 +101,9 @@ With the TD Learning method, we update the value function from a step, replacing
 #### 6. Introducing Q-Learning
 
 * What is Q-Learning?
+
+![Q-Function](images/q_function.png)
+
 Q-Learning is an off-policy value-based method that uses a TD approach to train its action-value function:
 
 Q-Learning is the algorithm we use to train our Q-function, an action-value function that determines the value of being at a particular state and taking a specific action at that state.
