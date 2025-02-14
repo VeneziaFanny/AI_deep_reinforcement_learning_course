@@ -1,4 +1,4 @@
-## AI_deep_reinforcement_learning_course
+## Deep reinforcement learning course - AI
 
 ### Link training
 
